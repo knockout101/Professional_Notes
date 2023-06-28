@@ -1,0 +1,92 @@
+Socket domains
+
+	- Unix domain (Unix for short)
+		- a part of BSD sockets used to communicate programs working within one operating system
+		  (simultaneously present in the same computer system)
+
+	- Internet domain(INET in short)
+		- part of BSD socket API used to communicate programs working within different computer systems,
+		  connected together using a TCP/IP network.
+
+Socket address
+
+    - IP address
+        - the computer system inside which the socket is located
+        - the port number (more often referred to as service number)
+
+IP address (IP4 address)
+
+    - 32-bit long value used to identify computers connected to any TCP/IP network
+
+    - There is a newer IP standard - IP6: 128-bit for same purpose
+
+Socket/service number/port number
+
+    - 16-bit long integer number indentifying a socket within a particular system, meaning there are 65536 possible
+      socket/service numbers (ports)
+
+    - HTTP protocol, a carrier of data used by REST, usually uses 'PORT 80'
+
+Protocol
+
+    - A standardized set of rules allowing processes to communicate with each other
+
+Protocol Stack
+
+    - A multilayer set of cooperating protocols providing a unified repertoire of services
+
+    - TCP/IP protocol stack is designed to cooperate with networks based on the IP protocol (IP networks)
+
+    - Elementary services are located at the bottom of the stack, while the most advanced and abstractive lie on the top
+
+IP (Internetwork Protocol)
+
+    - One of the lowest parts of TCP/IP protocol stack
+
+    - it is able to send a packet of data (a datagram) between two network nodes
+
+TCP (Transmission Control Protocol)
+
+    - The highest part of TCP/IP protocol stack
+
+    - Uses datagrams provided by lower layers and synchronizes the flow of data (handshakes) to construct a reliable
+      communication channel able to transmit and receive single characters
+
+UDP (User Datagram Protocol)
+
+    - In the higher part of TCP/IP stack but lower than TCP
+
+    - Doesn't use handshakes, which has two serious consequences:
+        - it is faster than TCP (due to fewer overheads)
+        - it is less reliable than TCP
+
+This means:
+
+    - TCP is a first-choice protocol for applications where data safety is more important than
+      efficiency (e.g. WWW, REST, etc)
+
+    - UDP is more adequate for applications where response time is crucial (DNS, DHCP, etc.)
+
+
+Connection-oriented vs Connectionless communication
+
+    - Connection-oriented
+
+        - demands some preliminary steps to establish the connection and other steps to finish it
+
+        - connection-oriented communications are usually built on top of TCP
+
+        - Both parties involved in the process aren't symmetrical, their roles and routines are different.
+          Both sides of the communication are aware that the other part is connected.
+
+    - Connectionless
+
+        - Can be established ad-hoc (snap - just like that)
+
+        - Both parties usually have equal rights, but neither of the parties is aware of the other side's state
+
+        - walkie-talkies are a good analogy
+
+        - Connectionless communications are usually built on top of UDP
+        
+
